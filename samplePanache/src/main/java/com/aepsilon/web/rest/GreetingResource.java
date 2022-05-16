@@ -1,4 +1,4 @@
-package com.aepsilon;
+package com.aepsilon.web.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
