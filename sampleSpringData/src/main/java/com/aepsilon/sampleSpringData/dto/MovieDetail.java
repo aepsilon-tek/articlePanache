@@ -21,7 +21,6 @@ public class MovieDetail {
        this.description=m.getDescription();
        this.genre = m.getGenre();
 
-       System.out.println(" SIZE >"+m.getCharacters().size());
 
        if(m.getCharacters()!= null){
            characters = new HashSet<>();

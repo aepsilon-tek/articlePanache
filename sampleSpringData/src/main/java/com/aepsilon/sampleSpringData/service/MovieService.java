@@ -36,8 +36,6 @@ public class MovieService {
 
 
     public Movie createMovie(Movie newMovie){
-        Logger l = Logger.getLogger("this.getClass()");
-        l.info("MOVIE >"+newMovie);
         Movie m= movieRepository.save(newMovie);
         return new Movie(m.getId());
     }
