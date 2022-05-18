@@ -1,6 +1,6 @@
 package com.aepsilon.sampleSpringData.web.rest;
 
-import com.aepsilon.sampleSpringData.domain.Characters;
+import com.aepsilon.sampleSpringData.domain.Character;
 import com.aepsilon.sampleSpringData.domain.Genre;
 import com.aepsilon.sampleSpringData.domain.Movie;
 import com.aepsilon.sampleSpringData.dto.CharacterLight;
@@ -61,8 +61,8 @@ public class MovieResource {
      * @return
      */
     @PostMapping("/movie/{id}/character")
-    public ResponseEntity<Characters> addCharacter(@PathVariable("id") Long idMovie, @RequestBody Characters newCharacters){
-        Characters c =  movieService.addCharacter(idMovie, newCharacters);
+    public ResponseEntity<Character> addCharacter(@PathVariable("id") Long idMovie, @RequestBody Character newCharacters){
+        Character c =  movieService.addCharacter(idMovie, newCharacters);
         return ResponseEntity.created(null).body(c);
     }
 
