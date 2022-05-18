@@ -23,16 +23,16 @@ public class MovieDetail {
    //public MovieDetail(@ProjectedFieldName("m.id")Long id, String title, String description,@ProjectedFieldName("g.id") Long genreId){
    public MovieDetail( Movie m){
        this.id=m.id;
-       this.title=m.getTitle();
-       this.description=m.getDescription();
-       this.genre = m.getGenre();
+       this.title=m.title;
+       this.description=m.description;
+       this.genre = m.genre;
 
-       System.out.println(" SIZE >"+m.getCharacters().size());
+       System.out.println(" SIZE >"+m.characters.size());
 
-       if(m.getCharacters()!= null){
+       if(m.characters!= null){
            characters = new HashSet<>();
-           for(Character currentC: m.getCharacters()){
-               characters.add(new CharacterLight(currentC.id,currentC.getFirstname(),currentC.getLastname()));
+           for(Character currentC: m.characters){
+               characters.add(new CharacterLight(currentC.id,currentC.firstname ,currentC.lastname));
            }
        }
 
