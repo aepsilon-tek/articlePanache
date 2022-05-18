@@ -24,7 +24,7 @@ classDiagram
 ```
 
 
-# Build des projets depuis la racine
+# Run local des projets depuis la racine
 
 ## Quarkus
 mvn -pl sampleSpringData clean spring-boot:run
