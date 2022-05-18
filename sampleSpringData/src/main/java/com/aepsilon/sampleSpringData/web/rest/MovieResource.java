@@ -1,6 +1,6 @@
 package com.aepsilon.sampleSpringData.web.rest;
 
-import com.aepsilon.sampleSpringData.domain.Character;
+import com.aepsilon.sampleSpringData.domain.Characters;
 import com.aepsilon.sampleSpringData.domain.Genre;
 import com.aepsilon.sampleSpringData.domain.Movie;
 import com.aepsilon.sampleSpringData.dto.CharacterLight;
@@ -47,7 +47,7 @@ public class MovieResource {
     public ResponseEntity<MovieDetail> getMovieDetail(@PathVariable("id") Long idMovie){
         Optional<MovieDetail> oM= movieService.getMovie(idMovie);
         if(oM.isPresent()){
-            return ResponseEntity.created(null).body(oM.get());
+            return ResponseEntity.ok().body(oM.get());
         }else{
             return ResponseEntity.notFound().build();
         }
@@ -57,12 +57,12 @@ public class MovieResource {
     /**
      * curl -d '{"firstname": "prenom", "lastname": "nom"}' -H "Content-Type: application/json" http://localhost:8080/api/movie/6/character
      * @param idMovie
-     * @param newCharacter
+     * @param newCharacters
      * @return
      */
     @PostMapping("/movie/{id}/character")
-    public ResponseEntity<Character> addCharacter(@PathVariable("id") Long idMovie, @RequestBody Character newCharacter){
-        Character c =  movieService.addCharacter(idMovie,newCharacter);
+    public ResponseEntity<Characters> addCharacter(@PathVariable("id") Long idMovie, @RequestBody Characters newCharacters){
+        Characters c =  movieService.addCharacter(idMovie, newCharacters);
         return ResponseEntity.created(null).body(c);
     }
 
