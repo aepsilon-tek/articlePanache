@@ -6,7 +6,7 @@ Projet associé à l'article sur Panache Quarkus
 classDiagram
     class Character{
     +String firstname
-    +String laststname
+    +String lastname
     }
     
     class Genre{
@@ -22,3 +22,11 @@ classDiagram
     Genre "1" --> "1..*" Movie
     
 ```
+
+
+# Build des projets depuis la racine
+
+## Quarkus
+mvn -pl sampleSpringData clean spring-boot:run
+## SpringBoot
+mvn -pl samplePanache clean quarkus:dev
