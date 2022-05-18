@@ -30,7 +30,7 @@ public class MovieService {
         Optional<Movie> m= Movie.findByIdOptional(idMovie);
         if(m.isPresent()){
             newCharacter.id =null; //Force create
-            newCharacter.setMovie(m.get());
+            newCharacter.movie=m.get();
             newCharacter.persist();
             return new Character(newCharacter.id);
         }
@@ -55,4 +55,23 @@ public class MovieService {
         }
         return res;
     }
+
+/*
+    public void test(){
+        List<Movie> movies = Movie.listAll();
+
+        Long nbMovie  = Movie.count();
+
+        Movie newMovie = new Movie();
+        newMovie.title="titre";
+        newMovie.description="desc film";
+        newMovie.persist();
+
+        newMovie.delete();
+
+    }
+
+ */
+
 }
+
